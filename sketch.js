@@ -1,6 +1,6 @@
 var Engine = Matter.Engine,
-    World = Matter.World,
-    Bodies = Matter.Bodies;
+var World = Matter.World,
+var Bodies = Matter.Bodies;
  
 var engine;
 var world;
@@ -40,22 +40,22 @@ function draw() {
 
     ground.display();
     noStroke();
-    fill(170);
+    fill(100);
     
     fill(255);
     textSize(15);
     text("Gravity " + fVal, 180, 381);
 }
  
-function Box(x, y, w, h, options) {
+function Box(x,y,width,height, options) {
     var options = {
         friction: 0.5,
         restitution: 0.5,
     }
  
-    this.body = Bodies.rectangle(x, y, w, h, options);
-    this.w = w;
-    this.h = h;
+    this.body = Bodies.rectangle(x,y,width,height, options);
+    this.width = width;
+    this.height = height;
     World.add(world, this.body);
  
     this.show = function () {
@@ -68,7 +68,7 @@ function Box(x, y, w, h, options) {
         rectMode(CENTER);
         strokeWeight(1);
         stroke(255);
-        fill(127);
+        fill(150);
         rect(0, 0, this.w, this.h);
         pop();
     }
